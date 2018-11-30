@@ -1,0 +1,14 @@
+<div>
+  <form>
+    <label> Email </label>
+    <input type="email" #email />
+    <label> Password </label>
+    <input type="password" #password />
+    <button type="button" (click)="login(email.value, password.value)" [disabled]="!enabled">
+      login
+    </button>
+    <button (click)="startObservableInterval()"> Start Timer </button>
+    <button (click)="stopObservableInterval()"> Stop </button>
+    <div class="seconds">{{ loginTimerData }}</div>
+  </form>
+</div>

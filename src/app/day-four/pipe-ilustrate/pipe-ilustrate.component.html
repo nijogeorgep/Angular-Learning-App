@@ -1,0 +1,34 @@
+<div>
+  <div class="built-in-pipes">
+      <p>Today's Date is  {{ today | date: format }}</p>
+      <button (click)="toggleFormat()">Toggle Format</button>
+  </div>
+  <div class="built-in-pipes">
+      <p>Currency in Canadian Dollar {{ price | currency:'CAD' }}</p>
+      <p>Currency in USD: {{ price | currency:'USD' }}</p>
+  </div>
+
+  <div class="built-in-pipes">
+      <p>Name in Uppercase : {{ name | uppercase }}</p>
+  </div>
+
+  <h2>Power Boost Calculator</h2>
+  <fieldset>
+    <div class="row form-group">
+      <label class="col-md-3 control-label"> Normal power:</label>
+      <div class="col-md-5">
+        <input class="form-control" [(ngModel)]="power">
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <label class="col-md-3 control-label"> Boost factor:</label>
+      <div class="col-md-5">
+        <input class="form-control" [(ngModel)]="factor">
+      </div>
+    </div>
+    </fieldset>
+    <p>
+      Super Hero Power: {{power | exponentialStrength: factor}}
+    </p>
+</div>

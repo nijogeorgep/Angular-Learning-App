@@ -1,0 +1,59 @@
+<span class="glyphicon glyphicon-refresh glyphicon-spin spinner" *ngIf="loading"></span>
+<div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <a class="navbar-brand">{{pageTitle}}</a>
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/dashboard']">Home</a>
+                </li>
+                <!-- <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a [routerLink]="['/products']">Product List</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/products', 0, 'edit']">Add Product</a>
+                </li> -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <li *ngIf="authService.isLoggedIn()">
+                    <a [routerLink]="['/login']">Welcome {{ authService.currentUser.userName }}</a>
+                </li> -->
+                <li *ngIf="!authService.isLoggedIn()">
+                    <a [routerLink]="['/login']">Log In</a>
+                </li>
+                <li *ngIf="authService.isLoggedIn()">
+                    <a (click)="logOut()">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container ">
+        <div class="col-lg-2 col-md-2 left-panel clearfix">
+            <ul class="left-panel-container">
+                <li>
+                    <a [routerLink]="['/daytwo']"> Day 2 </a>
+                </li> 
+                <li>
+                    <a [routerLink]="['/daythree']"> Day 3 </a>
+                </li>                
+                <li>
+                    <a [routerLink]="['/dayfour']"> Day 4 </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/dayfive']"> Day 5 </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/products']"> Products </a>
+                </li>            
+            </ul>
+        </div>
+        <div class="clearfix right-panel">
+            <div class="col-md-10">
+                <router-outlet></router-outlet>
+            </div>
+            <!-- <div class="col-md-2">
+                <router-outlet name="popup"></router-outlet>
+            </div> -->
+        </div>
+    </div>
+</div>

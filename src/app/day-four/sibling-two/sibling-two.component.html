@@ -1,0 +1,7 @@
+<div class="student-list-wrapper">
+  <h4 class="heading"> Get Student Details</h4>
+  <button class="refresh-button" (click)="refreshList()"> Refresh List </button>
+  <ul class="student-lists">
+    <li *ngFor="let student of studentsDetails">{{student}}</li>
+  </ul>
+</div>
